@@ -4,8 +4,7 @@ import { Link } from "gatsby"
 import Layout from "../components/layout"
 import Image from "../components/image"
 import SEO from "../components/seo"
-import TransitionLink from 'gatsby-plugin-transition-link'
-
+import AniLink from "gatsby-plugin-transition-link/AniLink"
 
 const IndexPage = () => (
   <Layout>
@@ -17,20 +16,9 @@ const IndexPage = () => (
       <Image />
     </div>
 
-
-    <TransitionLink
-  to="/page-2"
-  exit={{
-    trigger: ({ exit, node }) => this.interestingExitAnimation(exit, node),
-    length: 1
-  }}
-  entry={{
-    delay: 0.6
-  }}
->
-  Go to page 2
-</TransitionLink>
-
+    <AniLink to="/page-2" paintDrip>
+      Go to page 2
+    </AniLink>
   </Layout>
 )
 
